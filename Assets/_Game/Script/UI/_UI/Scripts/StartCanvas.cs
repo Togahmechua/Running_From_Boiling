@@ -11,12 +11,13 @@ public class StartCanvas : UICanvas
     {
         startBtn.onClick.AddListener(() =>
         {
-            //AudioManager.Ins.PlaySFX(AudioManager.Ins.click);
+            AudioManager.Ins.PlaySFX(AudioManager.Ins.click);
 
             UIManager.Ins.TransitionUI<ChangeUICanvas, StartCanvas>(0.5f,
                 () =>
                 {
                     UIManager.Ins.OpenUI<MainCanvas>();
+                    LevelManager.Ins.SpawnLevel();
                 });
         });
     }
